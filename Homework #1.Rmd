@@ -18,7 +18,8 @@ Fair roll simulation using runif code. This coude generates a rundom numbers, ho
 ```{r}
 round(runif(20, min = 1, max = 6), digits = 0)
 ```
-
+ [1] 4 1 5 1 3 5 4 4 4 4 2 5 6 5 1 3 6 5 2 3
+ 
 
 ## Replicate the commands given in the lecture notes R Basics for Lecture 1 to do some simple stats on the PUMS-NY data. Those notes request that you find average ages for men and women after accounting for the top-coding. Tell me something else interesting, that you learned from the data, for example about educational attainments in different neighborhoods in the city. Are there surprises for you?
 
@@ -36,6 +37,13 @@ colnames(table_1)<-c("Average age")
 row.names(table_1)<-c("Women's average age","Men's average age")
 table_1
 ```
+[1] 42.71629
+[1] 23.72012
+[1] 40.35398
+[1] 23.1098
+                    Average age
+Women's average age    42.71629
+Men's average age      40.35398
 
 Tell me something else interesting, that you learned from the data, for example about educational attainments in different neighborhoods in the city. Are there surprises for you?
 Working through census data "acs2017 _ny" we find out that higher education level leads to shorter life expectancy among retirees living in Midwood and Flatbush neighborhoods of Brooklyn (PUMA==4015). We choose retirees because we believe that this group is least likely to advance in their education level.
@@ -56,6 +64,22 @@ colnames(table_2)<-c("Average age")
 row.names(table_2)<-c("No High School","High School","Some college","College","Advanced")
 table_2
 ```
+[1] 79.17143
+[1] 8.836707
+[1] 75.38554
+[1] 8.083152
+[1] 73.73529
+[1] 7.840489
+[1] 71.90698
+[1] 6.875817
+[1] 73.18182
+[1] 7.824448
+               Average age
+No High School    79.17143
+High School       75.38554
+Some college      73.73529
+College           71.90698
+Advanced          73.18182
 
 ```{r}
 detach(acs2017_ny)
@@ -94,6 +118,17 @@ colnames(table_3)<-c("Average daily return in %")
 row.names(table_3)<-c("All sessions","Last session positive","Last two sessions positive","Last session negative","Last two sessions negative")
 table_3
 ```
+[1] 0.106
+[1] 0.136
+[1] 0.002
+[1] 0.063
+[1] -0.131
+                           Average daily return in %
+All sessions                                   0.106
+Last session positive                          0.136
+Last two sessions positive                     0.002
+Last session negative                          0.063
+Last two sessions negative                    -0.131
 
 Now read about “hot hands fallacy” and tell if you think that helps investment strategy. 
 The "hot hands fallacy" does not helps with investment strategy. The S&P 500 Index's 2019 performance reveles that during that period the index had on avarage 0.106% of daily return. If investors tried to find a patern between historical performans and future results, the investor will fail to achive higher returns because the probability of market to further growth is 50% and the analysis above demonstrates that this strategy will not be the most beneficial.
